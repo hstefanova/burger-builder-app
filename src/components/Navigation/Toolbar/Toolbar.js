@@ -2,10 +2,11 @@ import React from "react";
 import styles from "./Toolbar.module.css";
 import Logo from "../../Logo/Logo";
 import NavigationItems from "../NavigationItems/NavigationItems";
+import ToggleButton from "../../UI/Button/ToggleButton/ToggleButton";
 
-const Toolbar = () => (
+const Toolbar = ({ clicked }) => (
   <header className={styles.Toolbar}>
-    <div>Menu</div>
+    <ToggleButton clicked={clicked} />
     <div className={styles.logo}>
       <Logo />
     </div>

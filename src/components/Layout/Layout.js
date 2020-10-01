@@ -7,11 +7,33 @@ import styles from "./Layout.module.css";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 
 class Layout extends Component {
+  state = {
+    showSideDrawer: false,
+  };
+
+  sideDrawerClosedHadler = () => {
+    this.setState({ showSideDrawer: false });
+  };
+
+  sideDrawerOpenHandler = () => {
+    this.setState({ showSideDrawer: true });
+  };
+
+  //hold the old state and then update it
+  sideDrawerToggleHandler = () => {
+    this.setState((prevState) => {
+      return { showSideDrawer: !prevState.showSideDrawer };
+    });
+  };
+
   render() {
     return (
       <Aux>
-        <Toolbar />
-        <SideDrawer />
+        <Toolbar clicked={this.sideDrawerToggleHandler} />
+        <SideDrawer
+          open={this.state.showSideDrawer}
+          closed={this.sideDrawerClosedHadler}
+        />
         <main className={styles.Content}>{this.props.children}</main>
       </Aux>
     );

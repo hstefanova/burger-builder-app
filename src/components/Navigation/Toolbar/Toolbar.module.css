@@ -9,6 +9,7 @@
   left: 0;
   background: #703b09;
   z-index: 90;
+  padding: 0 15px;
 }
 
 .Toolbar .nav {

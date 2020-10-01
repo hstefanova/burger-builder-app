@@ -1,0 +1,11 @@
+.ToggleButton {
+  color: #ff0000;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media (min-width: 767px) {
+  .ToggleButton {
+    display: none;
+  }
+}
