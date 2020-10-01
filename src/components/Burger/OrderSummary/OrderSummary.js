@@ -13,6 +13,8 @@ const OrderSummary = ({
     </li>
   ));
 
+  console.log("OrderSummary is rerendered");
+
   return (
     <div>
       <h2>Order Summary</h2>
@@ -28,7 +30,6 @@ const OrderSummary = ({
       <Button clicked={purchaseCanceled} btnType="Danger">
         CANCEL
       </Button>
-      {/* <button onClick={purchaseCanceled}>Cancel</button> */}
     </div>
   );
 };
