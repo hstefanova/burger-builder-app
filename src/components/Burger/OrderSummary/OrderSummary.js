@@ -23,12 +23,11 @@ const OrderSummary = ({
       <ul>{orderIngredients}</ul>
       <strong>Price: ${totalPrice.toFixed(2)}</strong>
       <p>Continue to checkout?</p>
-      <Button btnType="Success" clicked={purchaseContinued}>
-        CONTINUE
-      </Button>
-
       <Button clicked={purchaseCanceled} btnType="Danger">
         CANCEL
+      </Button>
+      <Button btnType="Success" clicked={purchaseContinued}>
+        CONTINUE
       </Button>
     </div>
   );

@@ -7,7 +7,13 @@ class Modal extends Component {
   // It's not visible, so there is no point of re-rendering the component.
 
   shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.show !== this.props.show;
+    // The Modal component is changed when show property is updated
+    //But we need to hide the Modal, when the loading is set to TRUE
+    // That's why we check the children ( all properties)
+    return (
+      nextProps.show !== this.props.show ||
+      nextProps.children !== this.props.children
+    );
   }
 
   render() {
@@ -35,6 +41,5 @@ class Modal extends Component {
     );
   }
 }
-// const Modal = ({ children, show, modalClosed }) => {};
 
 export default Modal;
